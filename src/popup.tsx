@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import ReactDOM from "react-dom";
+import Button from "@mui/material/Button";
 
 const Popup = () => {
   const [count, setCount] = useState(0);
@@ -34,16 +35,22 @@ const Popup = () => {
 
   return (
     <>
-      <ul style={{ minWidth: "700px" }}>
+      <ul style={{ minWidth: "1400px" }}>
         <li>Current URL: {currentURL}</li>
         <li>Current Time: {new Date().toLocaleTimeString()}</li>
       </ul>
-      <button
+
+      <iframe
+        style={{ width: "100%", height: "300px" }}
+        src="http://embed.nicovideo.jp/watch/1453178722"
+      ></iframe>
+      <Button
+        variant="contained"
         onClick={() => setCount(count + 1)}
         style={{ marginRight: "5px" }}
       >
         count up
-      </button>
+      </Button>
       <button onClick={changeBackground}>change background</button>
     </>
   );
